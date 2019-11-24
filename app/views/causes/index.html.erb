@@ -1,0 +1,12 @@
+<h1> Index Causes</h1>
+
+<% @causes.each do |cause| %>
+
+<p> <%= cause.body %></p>
+<%= link_to  "Edit", edit_cause_path(cause) %>
+<%= link_to  "Delete", cause_path(cause) ,method: :delete, data: {confirm: "Are you sure?"} %>
+<hr/>
+<%end%>
+
+<%= link_to  "Your Account", edit_user_registration_path %>
+<%= link_to  "New Cause", new_cause_path %>
