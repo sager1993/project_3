@@ -1,25 +1,42 @@
 class CausesController < ApplicationController
-
-    def index
+    before_action :is_owner, only: [:destroy]
+    def index 
         @causes = Cause.all
     end
-​
+
     def new
         @cause = Cause.new
     end
-​
+
     def create
-        @cause = Cause.create(causes_params)
+        if user_signed_in?
+        @cause = current_user.causes.create(causes_params)
         if @cause.save
-            redirect_to causes_path
+            redirect_to causes_path   
         else
-            render :new
-        end
+              render :new 
+          end
+          else
+            redirect_to new_user_session_path
+          end
     end
-​
+
+    def destroy
+        Cause.find(params[:id]).destroy
+        redirect_to causes_path
+    end
+
+
     private
     def causes_params
         params.require(:cause).permit(:body)
     end
 
+    def is_owner
+        if current_user.id == Cause.find(params[:id]).user_id
+            return true
+        else
+            redirect_to causes_path
+        end
+    end
 end

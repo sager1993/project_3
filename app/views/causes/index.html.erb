@@ -1,0 +1,10 @@
+<h1> Index Causes</h1>
+
+<% @causes.each do |cause| %>
+
+<p> <%= cause.body %></p>
+
+<hr/>
+<%end%>
+
+<%= link_to  "New Cause", new_cause_path %>
