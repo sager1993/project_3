@@ -38,4 +38,4 @@
      description: "If you are burdened by predatory, exploitative private student loans, or federal student loans, you must sign this petition and spread it to as many people as you possibly can." ,
      category:"education")
      
-     Support.create(cause_id: 4, user_id: 1, title: "Save Turtels", body: "Turtels in the sea are paying the price for dumping our trash in oceans. Me and you should contibute to reduce trash dumping.")
+     Support.create(cause_id: 5, user_id: 1, title: "Save Turtels", body: "Turtels in the sea are paying the price for dumping our trash in oceans. Me and you should contibute to reduce trash dumping.")
