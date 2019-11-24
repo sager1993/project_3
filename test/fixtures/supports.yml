@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  describtion: MyString
-  category: MyString
+  title: MyString
+  body: MyString
   user: one
+  cause: one
 
 two:
-  describtion: MyString
-  category: MyString
+  title: MyString
+  body: MyString
   user: two
+  cause: two
