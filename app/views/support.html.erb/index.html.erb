@@ -1,0 +1,12 @@
+<h1> Index Supports</h1>
+
+<% @supports.each do |support| %>
+
+<p> <%= support.body %></p>
+<%= link_to  "Edit", edit_support_path(support) %>
+<%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"} %>
+<hr/>
+<%end%>
+
+<%= link_to  "Your Account", edit_user_registration_path %>
+<%= link_to  "New Cause", new_cause_path %>
