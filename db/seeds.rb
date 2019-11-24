@@ -41,6 +41,3 @@ Cause.create(cause_id:4, name: "Reduce potential cancer-causing ingredient in so
        category:"education")
        
        
-       
-       
-       
