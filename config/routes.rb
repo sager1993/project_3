@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :supports
   resources :causes
   get 'static/index'
   get 'static/not_index'
