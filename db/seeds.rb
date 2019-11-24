@@ -39,7 +39,7 @@ Cause.create(cause_id:4, name: "Reduce potential cancer-causing ingredient in so
        description: "If you are burdened by predatory, exploitative private student loans, or federal student loans, 
        you must sign this petition and spread it to as many people as you possibly can." ,
        category:"education")
-       Collapse
+       
        
        
        
