@@ -27,10 +27,20 @@ class SupportsController < ApplicationController
     end
 
     def update
-        support = Support.find(params[:id])
-        support.update(person_params)
+        if user_signed_in?
 
-        redirect_to support
+            support = Support.find(params[:id])
+            support.update(person_params)
+            @support = current_user.supports.update(supports_params)
+            
+        if @support.save
+            redirect_to supports_path   
+        else
+              render :new 
+          end
+          else
+            redirect_to new_user_session_path
+          end
     end
 
 
