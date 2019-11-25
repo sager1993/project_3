@@ -29,7 +29,7 @@ class CausesController < ApplicationController
 
     private
     def causes_params
-        params.require(:cause).permit(:body)
+        params.require(:cause).permit(:name, :description, :category)
     end
 
     def is_owner
