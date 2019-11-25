@@ -1,6 +1,6 @@
 class SupportsController < ApplicationController
 
-    before_action :is_owner, only: [:destroy]
+    before_action :is_owner, only: [:destroy, :update]
     def index 
         @supports = Support.all
     end
@@ -28,19 +28,14 @@ class SupportsController < ApplicationController
 
     def update
         if user_signed_in?
-
             support = Support.find(params[:id])
-            support.update(person_params)
-            @support = current_user.supports.update(supports_params)
-            
-        if @support.save
-            redirect_to supports_path   
+
+            @support = support.update(supports_params)
+
+            redirect_to supports_path
         else
-              render :new 
-          end
-          else
             redirect_to new_user_session_path
-          end
+        end
     end
 
 
@@ -53,7 +48,7 @@ class SupportsController < ApplicationController
 
     private
     def supports_params
-        params.require(:support).permit(:body)
+        params.require(:support).permit(:body, :title, :cause_id, :user_id)
     end
 
     def is_owner
