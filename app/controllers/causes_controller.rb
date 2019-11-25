@@ -26,26 +26,6 @@ class CausesController < ApplicationController
         redirect_to causes_path
     end
 
-    def edit
-        @cause = Cause.find(params[:id])
-    end
-
-    def update
-        if user_signed_in?
-
-            support = Support.find(params[:id])
-            support.update(person_params)
-            @support = current_user.supports.update(supports_params)
-            
-        if @support.save
-            redirect_to supports_path   
-        else
-              render :new 
-          end
-          else
-            redirect_to new_user_session_path
-          end
-    end
 
     private
     def causes_params
