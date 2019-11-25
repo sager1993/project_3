@@ -1,5 +1,5 @@
 class CausesController < ApplicationController
-    before_action :is_owner, only: [:destroy]
+    before_action :is_owner, only: [:destroy, :edit]
     def index 
         @causes = Cause.all
     end
@@ -35,10 +35,9 @@ class CausesController < ApplicationController
     def update
         if user_signed_in?
             cause = Cause.find(params[:id])
-            if(current_user.id == cause.user_id)
+
             @cause = cause.update(causes_params)
-            
-            end
+
             redirect_to causes_path
         else
             redirect_to new_user_session_path
