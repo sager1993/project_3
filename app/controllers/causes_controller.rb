@@ -21,6 +21,8 @@ class CausesController < ApplicationController
           end
     end
 
+    
+
     def destroy
         Cause.find(params[:id]).destroy
         redirect_to causes_path
@@ -32,21 +34,17 @@ class CausesController < ApplicationController
 
     def update
         if user_signed_in?
-
-            support = Support.find(params[:id])
-            support.update(person_params)
-            @support = current_user.supports.update(supports_params)
+            cause = Cause.find(params[:id])
+            if(current_user.id == cause.user_id)
+            @cause = cause.update(causes_params)
             
-        if @support.save
-            redirect_to supports_path   
+            end
+            redirect_to causes_path
         else
-              render :new 
-          end
-          else
             redirect_to new_user_session_path
-          end
+        end
     end
-
+    
     private
     def causes_params
         params.require(:cause).permit(:name, :description, :category)
