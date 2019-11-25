@@ -21,15 +21,33 @@ class CausesController < ApplicationController
           end
     end
 
+    
+
     def destroy
         Cause.find(params[:id]).destroy
         redirect_to causes_path
     end
 
+    def edit
+        @cause = Cause.find(params[:id])
+    end
 
+    def update
+        if user_signed_in?
+            cause = Cause.find(params[:id])
+            if(current_user.id == cause.user_id)
+            @cause = cause.update(causes_params)
+            
+            end
+            redirect_to causes_path
+        else
+            redirect_to new_user_session_path
+        end
+    end
+    
     private
     def causes_params
-        params.require(:cause).permit(:body)
+        params.require(:cause).permit(:name, :description, :category)
     end
 
     def is_owner

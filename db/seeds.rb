@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 
      Cause.create(name: "Raise awareness about human trafficking" ,
      description: "Stop human trafficking right away but to start we need to talk about this issue a lot more and not let it gain dust waiting for someone to discover it themselves. We can do this by talking about it more on the news across the world and inform everyone as much as possible.", 
@@ -37,3 +31,5 @@
      Cause.create(name: "Full, free and fair bankruptcy protections for student loans" ,
      description: "If you are burdened by predatory, exploitative private student loans, or federal student loans, you must sign this petition and spread it to as many people as you possibly can." ,
      category:"education")
+     
+     Support.create(cause_id: 5, user_id: 1, title: "Save Turtels", body: "Turtels in the sea are paying the price for dumping our trash into oceans. Me and you should contibute to reduce trash dumping.")
