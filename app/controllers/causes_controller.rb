@@ -26,6 +26,17 @@ class CausesController < ApplicationController
         redirect_to causes_path
     end
 
+    def edit
+        @cause = Cause.find(params[:id])
+    end
+
+    def update
+        cause = Cause.find(params[:id])
+        cause.update(person_params)
+
+        redirect_to cause
+    end
+
 
     private
     def causes_params

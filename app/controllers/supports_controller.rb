@@ -22,10 +22,23 @@ class SupportsController < ApplicationController
           end
     end
 
+    def edit
+        @support = Support.find(params[:id])
+    end
+
+    def update
+        support = Support.find(params[:id])
+        support.update(person_params)
+
+        redirect_to support
+    end
+
+
     def destroy
         Support.find(params[:id]).destroy
         redirect_to supports_path
     end
+
 
 
     private
