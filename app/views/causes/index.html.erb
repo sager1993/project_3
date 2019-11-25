@@ -2,9 +2,9 @@
 
 <% @causes.each do |cause| %>
 
-<p> <%= cause.body %></p>
+<p> <%= cause.name %></p>
 <%= link_to  "Edit", edit_cause_path(cause) %>
-<%= link_to  "Delete", cause_path(cause) ,method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to  "Delete", cause_path(cause), method: :delete, data: {confirm: "Are you sure?"} %>
 <hr/>
 <%end%>
 

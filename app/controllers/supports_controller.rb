@@ -22,10 +22,33 @@ class SupportsController < ApplicationController
           end
     end
 
+    def edit
+        @support = Support.find(params[:id])
+    end
+
+    def update
+        if user_signed_in?
+
+            support = Support.find(params[:id])
+            support.update(person_params)
+            @support = current_user.supports.update(supports_params)
+            
+        if @support.save
+            redirect_to supports_path   
+        else
+              render :new 
+          end
+          else
+            redirect_to new_user_session_path
+          end
+    end
+
+
     def destroy
         Support.find(params[:id]).destroy
         redirect_to supports_path
     end
+
 
 
     private
