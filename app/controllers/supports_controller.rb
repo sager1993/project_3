@@ -43,9 +43,8 @@ class SupportsController < ApplicationController
     
 
     def destroy
-        cause = Cause.find(params[:support][:cause_id])
         Support.find(params[:id]).destroy
-        redirect_to cause
+        redirect_to cause_path
     end
 
 
