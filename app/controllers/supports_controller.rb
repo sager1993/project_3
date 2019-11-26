@@ -13,7 +13,7 @@ class SupportsController < ApplicationController
         if user_signed_in?
         @support = current_user.supports.create(supports_params)
         if @support.save
-            redirect_to cause_supports_path   
+            redirect_to supports_path   
         else
               render :new 
           end
@@ -32,7 +32,7 @@ class SupportsController < ApplicationController
 
             @support = support.update(supports_params)
 
-            redirect_to cause_supports_path
+            redirect_to supports_path
         else
             redirect_to new_user_session_path
         end
@@ -41,7 +41,7 @@ class SupportsController < ApplicationController
 
     def destroy
         Support.find(params[:id]).destroy
-        redirect_to cause_supports_path
+        redirect_to supports_path
     end
 
 
@@ -55,7 +55,7 @@ class SupportsController < ApplicationController
         if current_user.id == Support.find(params[:id]).user_id
             return true
         else
-            redirect_to cause_supports_path
+            redirect_to supports_path
         end
     end
 end
