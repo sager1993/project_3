@@ -15,13 +15,14 @@
             </a>
           </li>
           <li class="nav-item">
-          <%= link_to  "Sing Up", new_user_registration_path , {:class => "nav-link"} %>
+          <%= link_to  "Sign Up", new_user_registration_path , {:class => "nav-link"} %>
           </li>
           <li class="nav-item">
-          <%= link_to "Sing In", new_user_session_path , {:class => "nav-link"} %>
+          <%= link_to "Sign In", new_user_session_path , {:class => "nav-link"} %>
           </li>
-          
-
+          <li class="nav-item">
+          <%= link_to  "Your Account", edit_user_registration_path,  {:class => "nav-link"} %>
+          </li>
           <li class="nav-item">
           <%= link_to  "Sign Out", destroy_user_session_path, :class => "nav-link", method: :delete %>
           </li>
