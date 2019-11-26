@@ -8,7 +8,7 @@
       Here you can find variety of causes that you can support 
       When crisis strikes, we are always among the first to respond and the last to leave. <br/>
        </p>
-      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+      <%= link_to "Call to action!", new_cause_path, class:"btn btn-primary btn-lg" %>
     </header>
 
     <!-- Page Features -->
@@ -26,7 +26,7 @@
              <p class="card-text"><%= cause.description %></p>
           </div>
           <div class="card-footer">
-            <a href="/" class="btn btn-primary">Support</a>
+            <td><%= link_to "Support", cause_path(cause), class:"btn btn-primary" %><td>
             <%= link_to  "Edit", edit_cause_path(cause), class: "btn btn-warning" %>
             <%= link_to  "Delete", cause_path(cause), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
           </div>
