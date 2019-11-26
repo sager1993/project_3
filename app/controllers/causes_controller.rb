@@ -21,6 +21,11 @@ class CausesController < ApplicationController
           end
     end
 
+    def show
+        @cause = Cause.find(params[:id])
+        @supports = @cause.supports 
+    end
+
     def destroy
         Cause.find(params[:id]).destroy
         redirect_to causes_path
