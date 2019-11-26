@@ -57,4 +57,4 @@ User.create!(email: 'misk@gmail.com',
      img: "https://images.theconversation.com/files/45719/original/y5jydqw4-1396833931.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" ,
      user_id: 1)
      
-     Support.create(cause_id: 5, user_id: 1, title: "Save Turtels", body: "Turtels in the sea are paying the price for dumping our trash into oceans. Me and you should contibute to reduce trash dumping.")
+     Support.create(cause_id: 4, user_id: 1, title: "Save Turtels", body: "Turtels in the sea are paying the price for dumping our trash into oceans. Me and you should contibute to reduce trash dumping.")
