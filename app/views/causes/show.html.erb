@@ -1,10 +1,10 @@
 <h1><%= @cause.name %></h1>
 <p><%= @cause.description %><p>
 <p><%= @cause.category %><p>
-
-
+  
 <%= link_to "New Support", new_support_path(:cause_id => @cause.id), { :class => "button waves-effect waves-light btn" } %>
 <br><br>
+
 
 <div class="row">
   <% @supports.each do |support| %>
@@ -18,7 +18,6 @@
     <button> <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"} %></button>
     <ul>
 
-    </div>
    
   <% end %>
 </div>
