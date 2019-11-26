@@ -21,7 +21,10 @@ class CausesController < ApplicationController
           end
     end
 
-    
+    def show
+        @cause = Cause.find(params[:id])
+        @supports = @cause.supports 
+    end
 
     def destroy
         Cause.find(params[:id]).destroy
@@ -31,6 +34,8 @@ class CausesController < ApplicationController
     def edit
         @cause = Cause.find(params[:id])
     end
+
+
 
     def update
         if user_signed_in?
