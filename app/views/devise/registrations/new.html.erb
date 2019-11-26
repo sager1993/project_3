@@ -1,39 +1,55 @@
-<h2>Sign up</h2>
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Sign Up </h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-label-group">
+    <%= f.label :email %><br /> <br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "form-control"%>
   </div>
 
-  <div class="field">
+  <div class="form-label-group">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% end %><br /> <br />
+    <%= f.password_field :password, autocomplete: "new-password" ,class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-label-group">
+    <%= f.label :password_confirmation %><br /> <br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-label-group">
+    <%= f.label :name %><br /> <br />
+    <%= f.text_field :name ,class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
+  <div class="form-label-group">
+    <%= f.label :role %><br /> <br />
+    <%= f.text_field :role ,class: "form-control"%>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up",class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+ </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
