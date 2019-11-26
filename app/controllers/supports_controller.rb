@@ -11,9 +11,10 @@ class SupportsController < ApplicationController
 
     def create
         if user_signed_in?
+        cause = Cause.find(params[:support][:cause_id])
         @support = current_user.supports.create(supports_params)
         if @support.save
-            redirect_to supports_path   
+            redirect_to cause   
         else
               render :new 
           end
@@ -28,11 +29,13 @@ class SupportsController < ApplicationController
 
     def update
         if user_signed_in?
+            cause = Cause.find(params[:support][:cause_id])
+            
             support = Support.find(params[:id])
 
             @support = support.update(supports_params)
 
-            redirect_to supports_path
+            redirect_to cause
         else
             redirect_to new_user_session_path
         end
@@ -40,8 +43,9 @@ class SupportsController < ApplicationController
     
 
     def destroy
+        cause = Cause.find(params[:support][:cause_id])
         Support.find(params[:id]).destroy
-        redirect_to supports_path
+        redirect_to cause
     end
 
 
