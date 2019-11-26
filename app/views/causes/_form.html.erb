@@ -10,21 +10,26 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name, "name" %><br />
     <%= f.text_field :name %>
   </p>
   
   <p>
-    <%= f.label :description %><br />
+    <%= f.label :description, "description" %><br />
     <%= f.text_field :description %>
   </p>
 
   <p>
-    <%= f.label :category %><br />
+    <%= f.label :category, "categotry" %><br />
     <%= f.text_field :category %>
   </p>
 
   <p>
-    <%= f.submit "Cause" %>
+    <%= f.label :img, "image" %><br />
+    <%= f.text_field :img %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit" %>
   </p>
 <% end %>

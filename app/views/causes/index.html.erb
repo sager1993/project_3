@@ -20,7 +20,7 @@
             </a>
           </li>
           <li class="nav-item">
-          <%= link_to  "Sing Up", new_user_registration_path , {:class => "nav-link"} %>
+          <%= link_to  "Sign Up", new_user_registration_path , {:class => "nav-link"} %>
           </li>
           <li class="nav-item">
           <%= link_to "Your Account", edit_user_registration_path , {:class => "nav-link"} %>
@@ -72,7 +72,7 @@
           <div class="card-footer">
             <a href="/" class="btn btn-primary">Support</a>
             <%= link_to  "Edit", edit_cause_path(cause), class: "btn btn-warning" %>
-<%= link_to  "Delete", cause_path(cause), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+            <%= link_to  "Delete", cause_path(cause), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
           </div>
         </div>
       </div>
