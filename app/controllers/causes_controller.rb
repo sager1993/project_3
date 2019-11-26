@@ -21,8 +21,6 @@ class CausesController < ApplicationController
           end
     end
 
-    
-
     def destroy
         Cause.find(params[:id]).destroy
         redirect_to causes_path
