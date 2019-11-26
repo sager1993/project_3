@@ -1,13 +1,24 @@
-<h1><%= @cause.name %></h1>
-<p><%= @cause.description %><p>
-<p><%= @cause.category %><p>
-  
-<%= link_to "New Support", new_support_path(:cause_id => @cause.id), { :class => "button waves-effect waves-light btn" } %>
-<br><br>
 
+<!-- Page Content -->
+  <div class="container">
 
-<div class="row">
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+    
+      <h4 class="display-3"><%= @cause.name %></h4>
+      <p class="lead"><%= @cause.description %></p>
+      
+ <button><%= link_to "New Support", new_support_path(:cause_id => @cause.id), { :class => "button waves-effect waves-light btn" } %> </button>
+</header>
+
+ <!-- Page Features -->
+    <div class="row text-center">
   <% @supports.each do |support| %>
+
+
+
+
+
     <div>
    <ul>
     <li><%= link_to support.title %><li>

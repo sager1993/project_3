@@ -1,7 +1,7 @@
 <%= form_for(@support) do |f| %>
   <% if @support.errors.any? %>
     <div id="error_explanation" >
-      <h2><%= pluralize(@support.errors.count, "error") %> prohibited this support from being saved:</h2>
+      <h5 ><%= pluralize(@support.errors.count, "error") %></h5>
       <ul>
       <% @support.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,9 +10,10 @@
     </div>
   <% end %>
   <p>
+  <div class="form-label-group">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
+    <%= f.text_field :title ,class:"form-control" %>
+  </p></div>
   
   <p>
     <%= f.select :cause_id, Cause.all.collect { |p| [ p.name, p.id ] } %>
