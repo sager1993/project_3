@@ -1,56 +1,12 @@
-
-
-
-
-
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-     <%= image_tag 'logo.ico',  style:"height: 65px; width: 70px;" %>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-          <%= link_to  "Sign Up", new_user_registration_path , {:class => "nav-link"} %>
-          </li>
-          <li class="nav-item">
-          <%= link_to "Your Account", edit_user_registration_path , {:class => "nav-link"} %>
-          </li>
-          
-
-<li class="nav-item">
-          <%= link_to  "New Cause", new_cause_path , {:class => "nav-link"} %>
-          </li>
-
- <li class="nav-item">
-          <%= link_to  "Sign Out", destroy_user_session_path, :class => "nav-link", method: :delete %>
-          </li>
-
-     
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-  <!-- Page Content -->
+<!-- Page Content -->
   <div class="container">
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
       <h2 class="display-3">Join The Movement!</h2>
       <p class="lead">Everyone can contribute to end the global issues  and change the world to be better place. <br/>
-      Here you can find different causes to support,When crisis strikes, we are always among the first to respond and the last to leave. <br/>
+      Here you can find variety of causes that you can support 
+      When crisis strikes, we are always among the first to respond and the last to leave. <br/>
        </p>
       <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
     </header>
@@ -83,108 +39,3 @@
 
   </div>
   <!-- /.container -->
-
-
-
-
-<!-- Footer -->
-<footer class="page-footer font-small mdb-color lighten-3 pt-4">
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-  
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
-
-        <ul class="list-unstyled">
-         
-          <li>
-            <p>
-              <a href="#!">ABOUT US</a>
-            </p>
-          </li>
-          <li>
-            <p>
-              <a href="https://www.un.org/en/sections/issues-depth/global-issues-overview/">Global Issues</a>
-            </p>
-          </li>
-         
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
-
-        <!-- Contact details -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <p>
-              <i class="fas fa-home mr-3"></i> Riyadah, KSA</p>
-          </li>
-          <li>
-            <p>
-              <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-          </li>
-          <li>
-            <p>
-              <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-          </li>
-         
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
-
-        <!-- Social buttons -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
-
-        <!-- Twitter -->
-        
-          <a type="button" class="btn-floating btn-tw" href=""><i class="fab fa-twitter"></i></a>
-        <br/>
-        <br/>
-        <!-- Github +-->
-        
-         <a type="button" class="btn-floating btn-gplus" href="https://github.com/sager1993/project_3"  ><i class= "fab fa-github"></i> </a>
-       
- 
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:Lab pioner
-    
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
