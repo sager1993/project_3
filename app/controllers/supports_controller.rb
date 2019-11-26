@@ -32,7 +32,7 @@ class SupportsController < ApplicationController
 
             @support = support.update(supports_params)
 
-            redirect_to cause_supports_path
+            redirect_to cause_path
         else
             redirect_to new_user_session_path
         end
@@ -48,14 +48,14 @@ class SupportsController < ApplicationController
 
     private
     def supports_params
-        params.require(:support).permit(:body, :title, :cause_id, :user_id)
+        params.require(:support).permit(:body, :title, :cause_id, :user_id, :id)
     end
 
     def is_owner
         if current_user.id == Support.find(params[:id]).user_id
             return true
         else
-            redirect_to cause_supports_path
+            redirect_to supports_path
         end
     end
 end
