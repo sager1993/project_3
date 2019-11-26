@@ -48,8 +48,11 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-      <h1 class="display-3">A Warm Welcome!</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+      <h2 class="display-3">A Warm Welcome!</h2>
+      <p class="lead">Lorem ipsum dolor sit amet,
+       consectetur adipisicing elit. Ipsa, ipsam, eligendi, 
+       in quo sunt possimus non incidunt odit vero aliquid similique
+        quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
       <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
     </header>
 
@@ -58,10 +61,13 @@
 
     <% @causes.each do |cause| %>
 
-<p> <%= cause.name %></p>
-<%= link_to  "Edit", edit_cause_path(cause) %>
-<%= link_to  "Delete", cause_path(cause), method: :delete, data: {confirm: "Are you sure?"} %>
-<hr/>
+<%
+=begin%>
+ <p> <%= cause.name %></p>
+
+<hr/> 
+<%
+=end%>
 
 
 
@@ -70,10 +76,14 @@
           <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
             <h4 class="card-title"><%= cause.name%></h4>
-            <p class="card-text"><%= cause.category %></p>
+            <p class="card-category"><%= cause.category %></p>
+            <br/>
+             <p class="card-text"><%= cause.description %></p>
           </div>
           <div class="card-footer">
             <a href="/" class="btn btn-primary">Support</a>
+            <%= link_to  "Edit", edit_cause_path(cause), class: "btn btn-warning" %>
+<%= link_to  "Delete", cause_path(cause), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
           </div>
         </div>
       </div>
