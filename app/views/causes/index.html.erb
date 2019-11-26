@@ -70,7 +70,7 @@
              <p class="card-text"><%= cause.description %></p>
           </div>
           <div class="card-footer">
-            <a href="/" class="btn btn-primary">Support</a>
+            <td><%= link_to "Support", cause_path(cause), class:"btn btn-primary" %><td>
             <%= link_to  "Edit", edit_cause_path(cause), class: "btn btn-warning" %>
             <%= link_to  "Delete", cause_path(cause), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
           </div>
