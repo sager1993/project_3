@@ -1,5 +1,5 @@
 class SupportsController < ApplicationController
-
+    
     before_action :is_owner, only: [:destroy, :update]
     def index 
         @supports = Support.all
@@ -43,8 +43,12 @@ class SupportsController < ApplicationController
     
 
     def destroy
+        cause_num = Support.find(params[:id])[:cause_id]
+        cause = Cause.find(cause_num)
+
         Support.find(params[:id]).destroy
-        redirect_to cause_path
+
+        redirect_to cause
     end
 
 
@@ -55,10 +59,13 @@ class SupportsController < ApplicationController
     end
 
     def is_owner
-        if current_user.id == Support.find(params[:id]).user_id
+        if user_signed_in?
+            if current_user.id == Support.find(params[:id]).user_id
             return true
-        else
+            else
             redirect_to supports_path
+            end
         end
+        redirect_to new_user_session_path
     end
 end
