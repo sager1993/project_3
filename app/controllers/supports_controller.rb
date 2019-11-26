@@ -40,7 +40,7 @@ class SupportsController < ApplicationController
             redirect_to new_user_session_path
         end
     end
-
+    
 
     def destroy
         cause = Cause.find(params[:support][:cause_id])
@@ -52,7 +52,7 @@ class SupportsController < ApplicationController
 
     private
     def supports_params
-        params.require(:support).permit(:body, :title, :cause_id, :user_id)
+        params.require(:support).permit(:body, :title, :cause_id, :user_id, :id)
     end
 
     def is_owner

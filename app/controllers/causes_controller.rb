@@ -36,7 +36,6 @@ class CausesController < ApplicationController
     end
 
 
-
     def update
         if user_signed_in?
             cause = Cause.find(params[:id])

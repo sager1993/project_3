@@ -9,14 +9,13 @@
 <div class="row">
   <% @supports.each do |support| %>
     <div>
-    <ul>
+   <ul>
     <li><%= link_to support.title %><li>
-    
     <p><%= link_to support.body %></p>
-
+    </ul>
     <button><%= link_to  "Edit", edit_support_path(support) %></button>
     <button> <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"} %></button>
-    <ul>
+   </div>
 
    
   <% end %>
