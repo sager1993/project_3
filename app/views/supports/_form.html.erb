@@ -10,6 +10,18 @@
     </div>
   <% end %>
   <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+    <%= f.select :cause_id, Cause.all.collect { |p| [ p.name, p.id ] } %>
+
+  </p>
+
+
+
+  <p>
     <%= f.label :body %><br />
     <%= f.text_field :body %>
   </p>

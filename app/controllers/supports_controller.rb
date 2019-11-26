@@ -1,6 +1,6 @@
 class SupportsController < ApplicationController
 
-    before_action :is_owner, only: [:destroy]
+    before_action :is_owner, only: [:destroy, :update]
     def index 
         @supports = Support.all
     end
@@ -11,9 +11,10 @@ class SupportsController < ApplicationController
 
     def create
         if user_signed_in?
+        cause = Cause.find(params[:support][:cause_id])
         @support = current_user.supports.create(supports_params)
         if @support.save
-            redirect_to supports_path   
+            redirect_to cause   
         else
               render :new 
           end
@@ -28,32 +29,30 @@ class SupportsController < ApplicationController
 
     def update
         if user_signed_in?
-
-            support = Support.find(params[:id])
-            support.update(person_params)
-            @support = current_user.supports.update(supports_params)
+            cause = Cause.find(params[:support][:cause_id])
             
-        if @support.save
-            redirect_to supports_path   
+            support = Support.find(params[:id])
+
+            @support = support.update(supports_params)
+
+            redirect_to cause
         else
-              render :new 
-          end
-          else
             redirect_to new_user_session_path
-          end
+        end
     end
 
 
     def destroy
+        cause = Cause.find(params[:support][:cause_id])
         Support.find(params[:id]).destroy
-        redirect_to supports_path
+        redirect_to cause
     end
 
 
 
     private
     def supports_params
-        params.require(:support).permit(:body)
+        params.require(:support).permit(:body, :title, :cause_id, :user_id)
     end
 
     def is_owner

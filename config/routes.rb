@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :supports
   resources :causes
+  resources :supports
   get 'static/index'
   get 'static/not_index'
   devise_for :users
