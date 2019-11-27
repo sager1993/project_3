@@ -1,33 +1,50 @@
+<div class="container-fluid center_div">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container ">
+          <div class="row ">
+            <div class="col-md-9 col-lg-8 mx-auto">
+            
+
+
 <%= form_for(@support) do |f| %>
   <% if @support.errors.any? %>
     <div id="error_explanation" >
-      <h5 ><%= pluralize(@support.errors.count, "error") %></h5>
+      <p class="small"><%= pluralize(@support.errors.count, "error") %></p>
       <ul>
       <% @support.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="small"><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  <p>
-  <div class="form-label-group">
-    <%= f.label :title %><br />
-    <%= f.text_field :title ,class:"form-control" %>
-  </p></div>
   
-  <p>
+  <div class="form-label-group">
+    <%= f.label :title %><br /><br/>
+    <%= f.text_field :title ,class:"form-control" %>
+  </div>
+  
+
+
+    <div class="form-label-group">
+    <%= f.label :body %><br /><br/>
+    <%= f.text_field :body ,class: "form-control" %> </div>
+ 
+  
     <%= f.select :cause_id, Cause.all.collect { |p| [ p.name, p.id ] } %>
 
-  </p>
 
-
-
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_field :body %>
-  </p>
   
-  <p>
-    <%= f.submit "Support" %>
-  </p>
+    <%= f.submit "Support",class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+  
 <% end %>
+
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
