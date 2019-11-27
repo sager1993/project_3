@@ -1,6 +1,5 @@
 User.create!(email: 'misk@gmail.com',
-     password: '123456789', name: 'misk', role: 'orgnization')
-
+     password: '123456789', name: 'misk', role: 'organization')
 
      Cause.create!(name: "Raise awareness about human trafficking" ,
      description: "Stop human trafficking right away but to start we need to talk about this issue a lot more and not let it gain dust waiting for someone to discover it themselves. We can do this by talking about it more on the news across the world and inform everyone as much as possible.", 
