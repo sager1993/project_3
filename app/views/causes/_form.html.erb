@@ -1,6 +1,6 @@
 <%= form_for(@cause) do |f| %>
   <% if @cause.errors.any? %>
-    <div id="error_explanation" >
+    <div id="error_explanation" class="text-danger">
       <h2><%= pluralize(@cause.errors.count, "error") %> prohibited this cause from being saved:</h2>
       <ul>
       <% @cause.errors.full_messages.each do |message| %>
