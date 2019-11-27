@@ -28,10 +28,10 @@ This app is a platform for everyone who wants to make the would a better place. 
 - As a Contributor, I want to follow organizations.
 
 # Wireframes:
-![Image description](/Users/mac/Desktop/sei/projects/project #3/project_3/docs/wireframes.pdf)
+![Image description](wireframes.pdf)
 
 # Entity Relationship Diagram's (ERD):
-![Image description](/Users/mac/Desktop/sei/projects/project #3/project_3/docs/Database ER Diagram Project_3.pdf)
+![Image description](Database ER Diagram Project_3.pdf)
 
 # Used Tools:
 - Rails
