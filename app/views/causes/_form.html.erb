@@ -1,35 +1,53 @@
+<div class="container-fluid center_div">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container ">
+          <div class="row ">
+            <div class="col-md-9 col-lg-8 mx-auto">
+            
+
+
 <%= form_for(@cause) do |f| %>
   <% if @cause.errors.any? %>
     <div id="error_explanation" class="text-danger">
-      <h2><%= pluralize(@cause.errors.count, "error") %> prohibited this cause from being saved:</h2>
       <ul>
       <% @cause.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="small"><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= f.label :name, "name" %><br />
-    <%= f.text_field :name %>
-  </p>
+   <div class="form-label-group">
+    <%= f.label :name, "name" %><br /><br/>
+    <%= f.text_field :name ,class: "form-control"%>
+   </div>
   
-  <p>
-    <%= f.label :description, "description" %><br />
-    <%= f.text_field :description %>
-  </p>
+   <div class="form-label-group">
+    <%= f.label :description, "description" %><br /><br/>
+    <%= f.text_field :description,class: "form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :category, "categotry" %><br />
-    <%= f.text_field :category %>
-  </p>
+   <div class="form-label-group">
+    <%= f.label :category, "categotry" %><br /><br/>
+    <%= f.text_field :category,class: "form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :img, :value => "https://static.dezeen.com/uploads/2019/04/ikea-logo-new-hero-1.jpg"%><br />
-    <%= f.text_field :img %>
-  </p>
+  <div class="form-label-group">
+    <%= f.label :img, :value => "https://static.dezeen.com/uploads/2019/04/ikea-logo-new-hero-1.jpg"%><br /><br/>
+    <%= f.text_field :img ,class: "form-control"%>
+  </div>
 
-  <p>
-    <%= f.submit "Submit" %>
-  </p>
+ 
+    <%= f.submit "Submit" ,class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+  
 <% end %>
+
+ </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
