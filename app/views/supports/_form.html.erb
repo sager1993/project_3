@@ -27,26 +27,14 @@
   </div>
   
     <%= f.hidden_field :cause_id, :value => params[:cause_id] %>
-<%
-=begin%>
- 
-  <p>
-    <%= f.select :cause_id, Cause.all.collect { |p| [ p.name, p.id ] } %>
 
-  </p> 
-<%
-=end%>
 
     <div class="form-label-group">
     <%= f.label :body %><br /><br/>
     <%= f.text_field :body ,class: "form-control" %> </div>
  
   
-    <%= f.select :cause_id, Cause.all.collect { |p| [ p.name, p.id ] } %>
-
-
-  
-    <%= f.submit "Support",class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <%= f.submit "Support",class: "btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" %>
   
 <% end %>
 
