@@ -13,11 +13,15 @@
 
  <!-- Page Features -->
     <div class="row text-center">
+
+  <% @users.each do |user| %>
+  <div>
+    <h6> <%= link_to user.id %> </h6>
+    <h6> <%= link_to user.name %> </h6>
+  </div>
+
+
   <% @supports.each do |support| %>
-
-
-
-
 
     <div>
    <ul>
