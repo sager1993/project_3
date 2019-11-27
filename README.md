@@ -13,10 +13,10 @@ This app is a platform for everyone who wants to make the would a better place. 
 
 
 # Wireframes:
-![Image description](https://github.com/sager1993/project_3/blob/master/docs/wireframes.pdf)
+![Image description](docs/wireframes.pdf)
 
 # Entity Relationship Diagram's (ERD):
-![Image description](https://github.com/sager1993/project_3/blob/master/docs/wireframes.pdf)
+![Image description](docs/Database%20ER%20Diagram%20Project_3.pdf)
 
 # Used Tools:
 - Rails
