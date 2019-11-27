@@ -11,14 +11,14 @@ class CausesController < ApplicationController
     def create
         if user_signed_in?
         @cause = current_user.causes.create(causes_params)
-        if @cause.save
-            redirect_to causes_path   
-        else
+            if @cause.save
+              redirect_to causes_path   
+            else
               render :new 
-          end
-          else
+            end
+        else
             redirect_to new_user_session_path
-          end
+        end
     end
 
     def show
@@ -37,15 +37,11 @@ class CausesController < ApplicationController
 
 
     def update
-        if user_signed_in?
-            cause = Cause.find(params[:id])
+        cause = Cause.find(params[:id])
 
-            @cause = cause.update(causes_params)
+        @cause = cause.update(causes_params)
 
-            redirect_to causes_path
-        else
-            redirect_to new_user_session_path
-        end
+        redirect_to causes_path
     end
     
     private
