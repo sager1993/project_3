@@ -12,19 +12,23 @@
 </header>
 
  <!-- Page Features -->
+
+  
     <div class="row text-center">
   <% @supports.each do |support| %>
 
  <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          
+ 
           <div class="card-body">
-            <h4 class="card-title"><%= link_to support.title %></h4>
-            <p class="card-category"><%= link_to support.body %></p>
+            <h4><%= support.user.name %></h4>
+            <h4><%= support.user.email %></h4>
+            <p class="card-category"><%= support.body %></p>
            
           </div>
           <div class="card-footer">
-            <td> <button><%= link_to  "Edit", edit_support_path(support) %></button><td>
+          
+             <button><%= link_to  "Edit", edit_support_path(support) %></button>
                <button> <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"} %></button>
             
           </div>
