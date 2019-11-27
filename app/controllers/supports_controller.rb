@@ -29,11 +29,14 @@ class SupportsController < ApplicationController
 
     def update
         if user_signed_in?
-            cause = Cause.find(params[:support][:cause_id])
-            
             support = Support.find(params[:id])
-
+            
+            params[:support][:cause_id] = support.cause_id
+        
             @support = support.update(supports_params)
+
+            cause_num = support[:cause_id]
+            cause = Cause.find(cause_num)
 
             redirect_to cause
         else

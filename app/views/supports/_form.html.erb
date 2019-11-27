@@ -15,10 +15,16 @@
     <%= f.text_field :title ,class:"form-control" %>
   </p></div>
   
+    <%= f.hidden_field :cause_id, :value => params[:cause_id] %>
+<%
+=begin%>
+ 
   <p>
     <%= f.select :cause_id, Cause.all.collect { |p| [ p.name, p.id ] } %>
 
-  </p>
+  </p> 
+<%
+=end%>
 
 
 
