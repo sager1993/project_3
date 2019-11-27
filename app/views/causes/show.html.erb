@@ -12,15 +12,18 @@
 </header>
 
  <!-- Page Features -->
+
+  
     <div class="row text-center">
   <% @supports.each do |support| %>
 
  <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          
+ 
           <div class="card-body">
-            <h4 class="card-title"><%= link_to support.title %></h4>
-            <p class="card-category"><%= link_to support.body %></p>
+            <h4><%= support.user.name %></h4>
+            <h4><%= support.user.email %></h4>
+            <p class="card-category"><%= support.body %></p>
            
           </div>
           <div class="card-footer">
