@@ -5,33 +5,18 @@ This app is a platform for everyone who wants to make the would a better place. 
 # User Stories:
 
 ## Organization's Epic
-- As an organization, I want to have an account.
-- As an organization, I want to create multiple causes.
-- As an organization, I want to describe my causes.
-- As an organization, I want to have a profile.
-- As an organization, I want to describe my organization and provide more information.
-- As an organization, I want to update and edit my information and my causes.
-- As an organization, I want contributors to able to donate to my causes.
-- As an organization, I want to set cause goals.
-- As an organization, I want to stop cause campaigns.
-- As an organization, I want to refund users donations.
-- As an organization, I want to have contributors following me.
+- As an organization, I want to have an account to create multiple causes. I want to the ability to update and edit my information and my causes. I want to have a profile to describe my organization and provide more information. I also want to stop cause campaigns. I want supporters to able to support to my causes.
 
-## Contributor's Epic
-- As a Contributor, I want to have an account.
-- As a Contributor, I want to view multiple causes.
-- As a Contributor, I want to view cause's Organization.
-- As a Contributor, I want to donate to a cause.
-- As a Contributor, I want to have a profile.
-- As a Contributor, I want to add a comment to my donation.
-- As a Contributor, I want to have my donations to be shown im my profile.
-- As a Contributor, I want to follow organizations.
+## Supporter's Epic
+- As a supporter, I want to have an account that I can view multiple causes and view cause's organizations. I want to support these causes and see other supporters comments. I want to have a profile that I can my password, name, and email.
+
+
 
 # Wireframes:
-![Image description](wireframes.pdf)
+![Image description](https://github.com/sager1993/project_3/blob/master/docs/wireframes.pdf)
 
 # Entity Relationship Diagram's (ERD):
-![Image description](Database ER Diagram Project_3.pdf)
+![Image description](https://github.com/sager1993/project_3/blob/master/docs/wireframes.pdf)
 
 # Used Tools:
 - Rails
@@ -39,4 +24,12 @@ This app is a platform for everyone who wants to make the would a better place. 
 - Bootstrap
 - GitHub
 - Devise
+- JavaScript
 
+# Technical Difficulty:
+
+# Future Plan:
+- Organization can receive actual donations, and can refund supporter's donations.
+- Organization can have followers and update them about their news.
+- Supporter can have show their donations to in their profile.
+- Supporter can follow organizations and get followed by other supporters.
