@@ -46,8 +46,7 @@
   </div>
 
    <div class="form-label-group">
-    <%= f.label :role %><br /><br/>
-    <%= f.text_field :role ,class: "form-control" %>
+    <%= f.select(:role, [['contributor'], ['organization']])%>
   </div>
 
   <div class="actions">

@@ -1,6 +1,6 @@
 class SupportsController < ApplicationController
     
-    before_action :is_owner, only: [:destroy, :update]
+    before_action :is_owner, only: [:destroy, :update, :edit]
     def index 
         @supports = Support.all
     end
@@ -13,14 +13,14 @@ class SupportsController < ApplicationController
         if user_signed_in?
         cause = Cause.find(params[:support][:cause_id])
         @support = current_user.supports.create(supports_params)
-        if @support.save
+            if @support.save
             redirect_to cause   
-        else
+            else
               render :new 
-          end
-          else
+            end
+        else
             redirect_to new_user_session_path
-          end
+        end
     end
 
     def edit
@@ -29,11 +29,14 @@ class SupportsController < ApplicationController
 
     def update
         if user_signed_in?
-            cause = Cause.find(params[:support][:cause_id])
-            
             support = Support.find(params[:id])
-
+            
+            params[:support][:cause_id] = support.cause_id
+        
             @support = support.update(supports_params)
+
+            cause_num = support[:cause_id]
+            cause = Cause.find(cause_num)
 
             redirect_to cause
         else
@@ -59,15 +62,16 @@ class SupportsController < ApplicationController
     end
 
     def is_owner
+        cause_num = Support.find(params[:id]).cause_id
+        cause = Cause.find(cause_num)
         if user_signed_in?
             if current_user.id == Support.find(params[:id]).user_id
             return true
             else
-            redirect_to supports_path
+            redirect_to cause
             end
         else
             redirect_to new_user_session_path
         end
-    
     end
 end
