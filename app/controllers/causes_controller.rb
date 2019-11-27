@@ -54,10 +54,14 @@ class CausesController < ApplicationController
     end
 
     def is_owner
-        if current_user.id == Cause.find(params[:id]).user_id
-            return true
-        else
+        if user_signed_in?
+            if current_user.id == Cause.find(params[:id]).user_id
+                return true
+            else
             redirect_to causes_path
+            end
+        else
+        redirect_to new_user_session_path
         end
     end
 end
