@@ -65,7 +65,9 @@ class SupportsController < ApplicationController
             else
             redirect_to supports_path
             end
+        else
+            redirect_to new_user_session_path
         end
-        redirect_to new_user_session_path
+    
     end
 end
