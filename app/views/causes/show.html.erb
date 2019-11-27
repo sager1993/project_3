@@ -4,10 +4,11 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-    <div class="display-3">
-      <h3><%= @cause.name %></h3></div>
-      <p class="lead"><%= @cause.description %></p>
-      
+    <div class="display-3 text-border">
+      <h1><%= @cause.name %></h1></div>
+      <br/>
+      <h3 class="lead text-border"><%= @cause.description %></h3>
+      <br/>
  <%= link_to "Support", new_support_path(:cause_id => @cause.id), { :class => "btn btn-primary btn-lg" } %> 
 </header>
 

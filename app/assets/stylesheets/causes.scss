@@ -6,10 +6,7 @@
    
 }
 
-.jumbotron my-4{
 
-  
-}
 
 .display-3{
 
@@ -18,19 +15,29 @@
 }
 
 header{ 
-//     background-image: url('https://archivo.urgente24.com/sites/default/files/notas/2014/11/10/razas.jpg');
-// opacity: 0.5;
-//   filter: alpha(opacity=50); /* For IE8 and earlier */
-background-size: 20%;
+    background-image: url('https://desinformemonos.org/wp-content/uploads/2019/08/IMG_2633.jpg');
+color: white;
+font-weight: bolder;
+}
+
+
+.lead{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.text-border
+{
+    text-shadow: 
+        -2px -2px 0px #000,
+         0px -2px 0px #000,
+         2px -2px 0px #000,
+        -2px  0px 0px #000,
+         2px  0px 0px #000,
+        -2px  2px 0px #000,
+         0px  2px 0px #000,
+         2px  2px 0px #000;
 }
 
 
 
-.lead {
-
-    
-}
-
-.card-img-top{
-
-}

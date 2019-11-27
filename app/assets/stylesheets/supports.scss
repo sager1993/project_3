@@ -1,3 +1,28 @@
 // Place all the styles related to the supports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header{ 
+    background-image: url('https://desinformemonos.org/wp-content/uploads/2019/08/IMG_2633.jpg');
+color: white;
+font-weight: bold;
+
+}
+
+.lead{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.text-border
+{
+    text-shadow: 
+        -2px -2px 0px #000,
+         0px -2px 0px #000,
+         2px -2px 0px #000,
+        -2px  0px 0px #000,
+         2px  0px 0px #000,
+        -2px  2px 0px #000,
+         0px  2px 0px #000,
+         2px  2px 0px #000;
+}
