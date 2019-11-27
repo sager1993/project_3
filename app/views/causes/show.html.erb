@@ -8,26 +8,32 @@
       <h4 class="display-3"><%= @cause.name %></h4>
       <p class="lead"><%= @cause.description %></p>
       
- <button><%= link_to "New Support", new_support_path(:cause_id => @cause.id), { :class => "button waves-effect waves-light btn" } %> </button>
+ <button><%= link_to "Support", new_support_path(:cause_id => @cause.id), { :class => "button waves-effect waves-light btn" } %> </button>
 </header>
 
  <!-- Page Features -->
     <div class="row text-center">
   <% @supports.each do |support| %>
 
+ <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          
+          <div class="card-body">
+            <h4 class="card-title"><%= link_to support.title %></h4>
+            <p class="card-category"><%= link_to support.body %></p>
+           
+          </div>
+          <div class="card-footer">
+            <td> <button><%= link_to  "Edit", edit_support_path(support) %></button><td>
+               <button> <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"} %></button>
+            
+          </div>
+        </div>
+      </div>
+      <%end%>
 
+     
+    <!-- /.row -->
 
-
-
-    <div>
-   <ul>
-    <li><%= link_to support.title %><li>
-    <p><%= link_to support.body %></p>
-    </ul>
-    <button><%= link_to  "Edit", edit_support_path(support) %></button>
-    <button> <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"} %></button>
-   </div>
-
-   
-  <% end %>
-</div>
+  </div>
+  <!-- /.container -->
