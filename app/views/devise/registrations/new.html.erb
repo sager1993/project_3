@@ -31,15 +31,15 @@
   <div class="form-label-group">
     <%= f.label :name %><br /> <br />
     <%= f.text_field :name ,class: "form-control"%>
-  </div>
+  </div><br/>
 
-  <div class="form-label-group">
-
-    <%= f.select(:role, [['contributor'], ['organization']])%>
-  </div>
+   
+    <div class="form-label-group">
+    <%= f.select(:role, [['contributor'], ['organization']],{}, {class: "form-control"})%>
+    </div>
 
   <div class="actions">
-    <%= f.submit "Sign up",class: "btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" %>
+    <%= f.submit "Sign up",class: "btn btn-lg btn-warning btn-block btn-login text-uppercase font-weight-bold mb-2" %>
   </div>
 <% end %>
 
