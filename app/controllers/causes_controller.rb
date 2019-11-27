@@ -1,5 +1,6 @@
 class CausesController < ApplicationController
     before_action :is_owner, only: [:destroy, :edit]
+    before_action :is_organization, only: [:new, :create]
     def index 
         @causes = Cause.all
     end
@@ -43,6 +44,8 @@ class CausesController < ApplicationController
 
         redirect_to causes_path
     end
+
+
     
     private
     def causes_params
@@ -58,6 +61,18 @@ class CausesController < ApplicationController
             end
         else
         redirect_to new_user_session_path
+        end
+    end
+
+    def is_organization
+        if user_signed_in?
+            if current_user.role == "organization"
+                return true
+            else
+            redirect_to causes_path
+            end
+        else
+            redirect_to new_user_session_path
         end
     end
 end
