@@ -18,7 +18,7 @@ This app is a platform for everyone who wants to make the would a better place. 
 ![](docs/Organizations_Causes.png)
 
 # Entity Relationship Diagram's (ERD):
-![](docs/Database%20ER%20Diagram%20Project_3.pdf)
+![](docs/Database%20ER%20Diagram%20Project_3-1.png)
 
 # Used Tools:
 - Rails
@@ -29,6 +29,7 @@ This app is a platform for everyone who wants to make the would a better place. 
 - JavaScript
 
 # Technical Difficulty:
+We had an issue that caused us delays and errors nested routing. However it was solved by using regular routing and passing the cause id in the params
 
 # Future Plan:
 - Organization can receive actual donations, and can refund supporter's donations.
