@@ -4,11 +4,11 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-    
-      <h4 class="display-3"><%= @cause.name %></h4>
+    <div class="display-3">
+      <h3><%= @cause.name %></h3></div>
       <p class="lead"><%= @cause.description %></p>
       
- <button><%= link_to "Support", new_support_path(:cause_id => @cause.id), { :class => "button waves-effect waves-light btn" } %> </button>
+ <%= link_to "Support", new_support_path(:cause_id => @cause.id), { :class => "btn btn-primary btn-lg" } %> 
 </header>
 
  <!-- Page Features -->
@@ -27,9 +27,8 @@
            
           </div>
           <div class="card-footer">
-          
-             <button><%= link_to  "Edit", edit_support_path(support) %></button>
-               <button> <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"} %></button>
+            <td><%= link_to  "Edit", edit_support_path(support) , class: "btn btn-warning" %><td>
+                <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"},class: "btn btn-danger" %>
             
           </div>
         </div>
