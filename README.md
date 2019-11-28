@@ -4,10 +4,10 @@ This app is a platform for everyone who wants to make the would a better place. 
 
 # User Stories:
 
-## Organization's Epic
+## Organization's Story
 - As an organization, I want to have an account to create multiple causes. I want to the ability to update and edit my information and my causes. I want to have a profile to describe my organization and provide more information. I also want to stop cause campaigns. I want supporters to able to support to my causes.
 
-## Supporter's Epic
+## Supporter's Story
 - As a supporter, I want to have an account that I can view multiple causes and view cause's organizations. I want to support these causes and see other supporters comments. I want to have a profile that I can my password, name, and email.
 
 
