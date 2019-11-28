@@ -1,6 +1,6 @@
 class CausesController < ApplicationController
     # permissions
-    # Only owner can edit and destroy their causes
+    # Only the cause's owner can edit and destroy their causes
     before_action :is_owner, only: [:destroy, :edit]
     # Only organizations can create causes
     before_action :is_organization, only: [:new, :create]
@@ -16,16 +16,16 @@ class CausesController < ApplicationController
         @cause = Cause.new
     end
 
-    # Create a new Cause action, it creates and a fills a the new cause object
+    # Create a new Cause action, it creates and fills the new cause object
     def create
         # check if the user logged in
         if user_signed_in?
             # Create a new cause and declare it in @cause to be passed to the view
             @cause = current_user.causes.create(causes_params)
-                # once saved show all the causes
+                # once saved, go to the causes index page
                 if @cause.save
                     redirect_to causes_path
-                # if it's not saved initialize a new
+                # if it's not saved initialize a new one 
                 else
                     render :new 
                 end
@@ -50,7 +50,7 @@ class CausesController < ApplicationController
 
     # update action for the cause
     def update
-        # look for the specific cause, and store it
+        # look for the specific cause, and store it in a variable
         cause = Cause.find(params[:id])
 
         # update that specific cause using the update params

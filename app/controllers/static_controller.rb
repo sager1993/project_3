@@ -1,3 +1,4 @@
+# Homepage controller, it does nothing!
 class StaticController < ApplicationController
   def index
   end
