@@ -23,6 +23,7 @@ This app is a platform for everyone who wants to make the would a better place. 
 # Used Tools:
 - Rails
 - Ruby
+- PostgreSQL
 - SQL
 - Bootstrap
 - GitHub
