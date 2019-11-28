@@ -23,10 +23,10 @@ This app is a platform for everyone who wants to make the would a better place. 
 # Used Tools:
 - Rails
 - Ruby
+- SQL
 - Bootstrap
 - GitHub
 - Devise
-- JavaScript
 
 # Technical Difficulty:
 We had an issue that caused us delays and errors nested routing. However it was solved by using regular routing and passing the cause id in the params
