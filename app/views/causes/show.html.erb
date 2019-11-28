@@ -2,31 +2,40 @@
 <!-- Page Content -->
   <div class="container">
 
-    <!-- Jumbotron Header -->
+   <!-- Jumbotron Header used bootsrtap-->
     <header class="jumbotron my-4">
     <div class="display-3 text-border">
       <h1><%= @cause.name %></h1></div>
       <br/>
       <h3 class="lead text-border"><%= @cause.description %></h3>
       <br/>
+       <!-- button for createing new support take the user to new support form using bootstrap primary class-->
+
  <%= link_to "Support", new_support_path(:cause_id => @cause.id), { :class => "btn btn-primary btn-lg" } %> 
 </header>
 
- <!-- Page Features -->
+   <!-- the body for page which will display supports in cards -->
+    <!-- Page Features -->
 
   
     <div class="row text-center">
+
+      <!-- looping through all supports to display it  -->
   <% @supports.each do |support| %>
 
  <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
  
+ <!-- retraving info from database to desplay it on each card -->
+
           <div class="card-body">
             <h4><%= support.user.name %></h4>
             <h6><%= support.user.email %></h6>
             <p class="card-category"><%= support.body %></p>
            
           </div>
+<!-- creating footer for each card with 3 buttons led to the form pages  -->
+
           <div class="card-footer">
             <td><%= link_to  "Edit", edit_support_path(support) , class: "btn btn-warning" %><td>
                 <%= link_to  "Delete", support_path(support) ,method: :delete, data: {confirm: "Are you sure?"},class: "btn btn-danger" %>
