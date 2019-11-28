@@ -1,7 +1,7 @@
 <!-- Page Content -->
   <div class="container">
 
-    <!-- Jumbotron Header -->
+    <!-- Jumbotron Header used bootsrtap-->
     <header class="jumbotron my-4">
     <div class="display-3 text-border">
       <h1>Join The Movement!</h1> </div>
@@ -11,24 +11,34 @@
       When crisis strikes, we are always among the first to respond and the last to leave. <br/>
        </p>
         <br/>
+          <!-- button for createing new cause take the user to new cause form using bootstrap primary class-->
       <%= link_to "New Cause", new_cause_path, class:"btn btn-primary btn-lg" %>
     </header>
    
 
+    <!-- the body for page which will display the cuses in cards -->
     <!-- Page Features -->
     <div class="row text-center">
 
+
+    <!-- looping through all causes to display it  -->
     <% @causes.each do |cause| %>
 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
+        <!-- retraving img from database to desplay it on each card -->
            <%=  image_tag cause.img, class:'card-img-top'%>
           <div class="card-body">
+
+
+    <!-- retraving info from database to desplay it on each card -->
             <h4 class="card-title"><%= cause.name%></h4>
             <p class="card-category"><%= cause.category %></p>
             <br/>
              <p class="card-text"><%= cause.description %></p>
           </div>
+          
+<!-- creating footer for each card with 3 buttons led to the form pages  -->
           <div class="card-footer">
             <td><%= link_to "Support", cause_path(cause), class:"btn btn-primary" %><td>
             <%= link_to  "Edit", edit_cause_path(cause), class: "btn btn-warning" %>
